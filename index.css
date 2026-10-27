@@ -1,0 +1,158 @@
+/* Размерите включват вътрешните отстояния и рамките. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; /* Премахва стандартното отстояние на браузъра. */
+    padding: 24px; /* Оставя пространство около приложението. */
+    min-height: 100vh; /* Фонът покрива поне височината на екрана. */
+    background-color: #eef2f7; /* Фон на страницата. */
+    color: #243247; /* Основен цвят на текста. */
+    font-family: Arial, sans-serif; /* Шрифт и резервен вариант. */
+    line-height: 1.5; /* Разстояние между редовете на текста. */
+}
+
+.notes-app {
+    max-width: 720px; /* Контейнерът няма да надвишава тази ширина. */
+    margin: 32px auto; /* Отстояние по вертикала и центриране по хоризонтала. */
+    padding: 28px; /* Пространство между съдържанието и краищата. */
+    background-color: white;
+    border-radius: 18px; /* Заобля ъглите. */
+    box-shadow: 0 8px 28px rgba(36, 50, 71, 0.12); /* Добавя сянка. */
+}
+
+h1 {
+    margin: 0 0 24px; /* Отстояние само под заглавието. */
+    text-align: center; /* Центрира текста. */
+    font-size: 28px; /* Размер на буквите. */
+}
+
+label {
+    display: block; /* Всеки надпис заема отделен ред. */
+    margin-bottom: 6px;
+    font-weight: 700; /* Удебелява текста. */
+}
+
+input,
+textarea {
+    width: 100%; /* Заемат наличната ширина на контейнера. */
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #b8c4d4; /* Дебелина, вид и цвят на рамката. */
+    border-radius: 8px;
+    background-color: #f8fafc;
+    color: #243247;
+    font: inherit; /* Наследяват шрифта и размера от родителя. */
+}
+
+textarea {
+    min-height: 150px; /* Минимална височина на текстовото поле. */
+    resize: vertical; /* Позволява ръчно разтягане само по височина. */
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #64748b; /* Цвят на подсказващия текст в празните полета. */
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2563eb; /* Променя рамката на активното поле. */
+    outline: 2px solid #bfdbfe; /* Видим контур около него. */
+    outline-offset: 2px; /* Разстояние между рамката и контура. */
+}
+
+button {
+    padding: 10px 16px;
+    border: none; /* Премахва стандартната рамка. */
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer; /* Показва курсор с ръчичка. */
+    transition: background-color 0.2s; /* Плавна промяна на фона. */
+}
+
+button:hover {
+    background-color: #1d4ed8; /* Фон при посочване с мишката. */
+}
+
+button:focus-visible {
+    outline: 3px solid #93c5fd; /* Контур при навигация с клавиатура. */
+    outline-offset: 3px;
+}
+
+#saveNoteBtn {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    margin-top: 12px;
+}
+
+#counter {
+    color: #64748b;
+    font-size: 14px;
+    text-align: right;
+}
+
+#counterNotes,
+#counterShowNotes {
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#list {
+    list-style: none; /* Премахва точките пред елементите. */
+    padding: 0; /* Премахва стандартното отместване на списъка. */
+    margin: 24px 0 0;
+}
+
+#list li {
+    padding: 18px;
+    margin-bottom: 14px;
+    border: 1px solid #dbe3ee;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    overflow-wrap: anywhere; /* Пренася и много дълги думи или адреси. */
+    white-space: pre-wrap; /* Запазва новите редове във въведения текст. */
+}
+
+#list button {
+    display: block; /* Всеки бутон започва на отделен ред. */
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+#list .delete-btn {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+#list .delete-btn:hover {
+    background-color: #fecaca;
+}
+
+/* Тези правила се прилагат при екран с ширина до 600px. */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .notes-app {
+        margin: 12px auto;
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #list button {
+        width: 100%; /* По-удобни бутони за натискане на телефон. */
+    }
+}

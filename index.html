@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title>Бележник</title>
+  </head>
+  <body>
+    <main class = "notes-app">
+      <h1>Моите бележки</h1>
+    <label for="titleMessage">Въведи заглавие</label>
+    <input id="titleMessage" type="text" />
+    <label for = "searchInput">Намери бележка</label>
+    <input id = "searchInput" type = "text">
+    <label for = "textMessage">Въведи текст</label>
+    <textarea id = "textMessage" maxlength="150" name = "text" rows = "10" cols = "50"></textarea>
+    <button id = "saveNoteBtn">Запази бележката</button>
+    <ul id = "list"></ul>
+    <p id = "counter"></p>
+    <p id = "counterNotes"></p>
+    <p id = "counterShowNotes"></p>
+    <script src = "index.js"></script>
+    </main>
+  </body>
+</html>
+    
